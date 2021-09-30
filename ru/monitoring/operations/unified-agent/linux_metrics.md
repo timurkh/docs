@@ -18,7 +18,7 @@
 
 1. Установите и настройте {{unified-agent-full-name}}.
 
-   1. Создайте в домашнем каталоге файл **config.yml**. В файле замените строку `$FOLDER_ID` на идентификатор каталога, в который будут записываться метрики.
+   1. Создайте в домашнем каталоге файл **config.yml**.
 
        **config.yml:**
        ```yaml
@@ -72,7 +72,7 @@
           - /etc/yandex/unified_agent/conf.d/*.yml
        ```
 
-   1. Установите {{unified-agent-short-name}} на свою виртуальную машину, выполнив в домашнем каталоге следующую команду:
+   1. Установите {{unified-agent-short-name}} на свою виртуальную машину, выполнив в домашнем каталоге следующую команду, заменив a1bs... на идентификатор каталога, в который будут записываться метрики:
 
       ```bash
       docker run \
@@ -81,7 +81,7 @@
       -v `pwd`/config.yml:/etc/yandex/unified_agent/config.yml \
       -v /proc:/ua_proc \
       -e PROC_DIRECTORY=/ua_proc \
-      -e FOLDER_ID=a1bs... \
+      -e FOLDER_ID=**a1bs...** \
       cr.yandex/yc/unified-agent
       ```
 
